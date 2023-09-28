@@ -18,3 +18,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 //npm install -g nodemon
+//nodemon server.js
+
+// https://github.com/olekszij/app.git
