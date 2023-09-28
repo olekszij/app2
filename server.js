@@ -7,8 +7,20 @@ const PORT = 3000;
  * @param {object} req - The request object
  * @param {object} res - The response object
  */
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-  res.send('Hello, World! I am the server!');
+  res.send(`
+    <html>
+      <head>
+        <link rel="stylesheet" href="/styles.css">
+      </head>
+      <body>
+        <h1>Hello, World! I am the server!</h1>
+        <p>I am listening on port ${PORT}.</p>
+      </body>
+    </html>
+  `);
 });
 
 /**
@@ -17,7 +29,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-//npm install -g nodemon
-//nodemon server.js
-
-// https://github.com/olekszij/app.git
